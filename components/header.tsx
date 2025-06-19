@@ -74,7 +74,7 @@ export default function Header() {
                   <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
                     <div className="relative h-10 w-10">
                       <Image
-                        src="/placeholder.svg?height=40&width=40"
+                        src="/LogoHercules.png"
                         alt="Veterinaria Hercules Logo"
                         fill
                         className="object-contain"
@@ -82,10 +82,7 @@ export default function Header() {
                     </div>
                     <span className="text-xl font-bold text-indigo-700">Veterinaria Hercules</span>
                   </Link>
-                  <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(false)}>
-                    <X className="h-5 w-5" />
-                    <span className="sr-only">Cerrar menú</span>
-                  </Button>
+                  
                 </div>
 
                 <nav className="flex flex-col gap-4">
