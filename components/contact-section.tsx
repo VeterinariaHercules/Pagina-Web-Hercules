@@ -75,10 +75,7 @@ export default function ContactSection() {
               <li className="flex items-start gap-3 w-80">
                 <Clock className="h-5 w-5 text-indigo-600 mt-0.5" />
                 <div>
-                  <p className="font-medium">Horario de Atención</p>
-                  <p className="text-gray-600">Lun-Sab: 8am-10pm</p>
-                  <p className="text-gray-600">Dom: 9am-6pm</p>
-                  <p className="text-gray-600">Urgencias 24 horas</p>
+                  <p className="font-medium">Horario de Atención 24 Horas</p>
                 </div>
               </li>
             </ul>

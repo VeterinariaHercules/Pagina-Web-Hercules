@@ -125,20 +125,31 @@ export default function Header() {
                     <div className="flex items-center gap-3">
                       <Clock className="h-5 w-5 text-indigo-600" />
                       <div className="text-gray-600">
-                        <p>Lunes-Sabado: 8am-10pm</p>
-                        <p>Domingo-Festivos : 9am-6pm</p>
-                        <p>Urgencias 24 horas</p>
+                        <p>Lunes-Domingo: 24 Horas</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <MapPin className="h-5 w-5 text-indigo-600" />
-                      <Link
-                        href="https://maps.google.com"
-                        target="_blank"
-                        className="text-gray-600 hover:text-indigo-600"
-                      >
-                        Av. 2b norte # 73a -26, Cali
-                      </Link>
+                    <div className="flex flex-col space-y-2">
+                      <div className="flex items-center gap-3">
+                        <MapPin className="h-5 w-5 text-indigo-600" />
+                        <Link
+                          href="https://www.google.com/maps/place/Av+2b+Nte+%2373+A+26,+Acopi,+Cali,+Valle+del+Cauca"
+                          target="_blank"
+                          className="text-gray-600 hover:text-indigo-600"
+                        >
+                          Av. 2b norte # 73a -26, Cali
+                        </Link>
+                      </div>
+
+                      <div className="flex items-center gap-3">
+                        <MapPin className="h-5 w-5 text-indigo-600" />
+                        <Link
+                          href="https://maps.google.com/?q=Cra.%201D%20%2368A-38,%20Cali"
+                          target="_blank"
+                          className="text-gray-600 hover:text-indigo-600"
+                        >
+                          Cra. 1D # 68A-38, Cali
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
