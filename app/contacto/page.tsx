@@ -13,7 +13,7 @@ export default function Contacto() {
     {
       id: "sede1",
       name: "Sede Principal - Clínica Veterinaria Hércules",
-      address: "Avenida 2B # 73A - 26, Cali, Valle del Cauca",
+      address: "Avenida 2B Norte # 73A - 26, Cali, Valle del Cauca",
       phones: ["311 637 0334", "313 748 0706", "311 771 5475"],
       email: "clinicaveterinariahercules@gmail.com",
       hours: {
