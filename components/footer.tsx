@@ -16,6 +16,7 @@ export default function Footer() {
   return (
     <footer className="bg-indigo-900 text-white">
       <div className="container mx-auto px-4 py-12">
+        {/* GRID PRINCIPAL */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About */}
           <div>
@@ -30,7 +31,7 @@ export default function Footer() {
                 />
               </div>
               <span className="text-xl font-bold">
-                Clinica Veterinaria Hercules
+                Clínica Veterinaria Hércules
               </span>
             </div>
             <p className="text-indigo-100 mb-4">
@@ -86,7 +87,7 @@ export default function Footer() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-5 w-5 icon icon-tabler icons-tabler-outline icon-tabler-brand-tiktok"
+                    className="h-5 w-5"
                   >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path
@@ -100,213 +101,149 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Enlaces Rápidos */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
             <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/"
-                  className="text-indigo-100 hover:text-white transition-colors"
-                >
-                  Inicio
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/sobre-nosotros"
-                  className="text-indigo-100 hover:text-white transition-colors"
-                >
-                  Sobre Nosotros
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/tienda"
-                  className="text-indigo-100 hover:text-white transition-colors"
-                >
-                  Tienda
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/galeria"
-                  className="text-indigo-100 hover:text-white transition-colors"
-                >
-                  Galería
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contacto"
-                  className="text-indigo-100 hover:text-white transition-colors"
-                >
-                  Contacto
-                </Link>
-              </li>
+              {[
+                { href: "/", label: "Inicio" },
+                { href: "/sobre-nosotros", label: "Sobre Nosotros" },
+                { href: "/tienda", label: "Tienda" },
+                { href: "/galeria", label: "Galería" },
+                { href: "/contacto", label: "Contacto" },
+              ].map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-indigo-100 hover:text-white transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Servicios */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Servicios</h3>
             <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/sobre-nosotros"
-                  className="text-indigo-100 hover:text-white transition-colors"
-                >
-                  Consulta
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/sobre-nosotros"
-                  className="text-indigo-100 hover:text-white transition-colors"
-                >
-                  Vacunación
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/sobre-nosotros"
-                  className="text-indigo-100 hover:text-white transition-colors"
-                >
-                  Desparasitacion
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/sobre-nosotros"
-                  className="text-indigo-100 hover:text-white transition-colors"
-                >
-                  Cirugía
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/sobre-nosotros"
-                  className="text-indigo-100 hover:text-white transition-colors"
-                >
-                  Diagnostico por imagen
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/sobre-nosotros"
-                  className="text-indigo-100 hover:text-white transition-colors"
-                >
-                  Laboratorio
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/sobre-nosotros"
-                  className="text-indigo-100 hover:text-white transition-colors"
-                >
-                  Profilaxis
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/sobre-nosotros"
-                  className="text-indigo-100 hover:text-white transition-colors"
-                >
-                  Hospitalizacion
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/sobre-nosotros"
-                  className="text-indigo-100 hover:text-white transition-colors"
-                >
-                  Urgencias
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/sobre-nosotros"
-                  className="text-indigo-100 hover:text-white transition-colors"
-                >
-                  Baño y peluquería
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/sobre-nosotros"
-                  className="text-indigo-100 hover:text-white transition-colors"
-                >
-                  Tienda
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/sobre-nosotros"
-                  className="text-indigo-100 hover:text-white transition-colors"
-                >
-                  Guarderia
-                </Link>
-              </li>
+              {[
+                "Consulta",
+                "Vacunación",
+                "Desparasitación",
+                "Cirugía",
+                "Diagnóstico por imagen",
+                "Laboratorio",
+                "Profilaxis",
+                "Hospitalización",
+                "Urgencias",
+                "Baño y peluquería",
+                "Tienda",
+                "Guardería",
+              ].map((servicio) => (
+                <li key={servicio}>
+                  <Link
+                    href="/sobre-nosotros"
+                    className="text-indigo-100 hover:text-white transition-colors"
+                  >
+                    {servicio}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contacto */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contacto</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 min-w-[1.25rem] text-indigo-300 mt-0.5" />
-                <span className="text-indigo-100">
-                  Av. 2b norte # 73a -26, Cali
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Phone className="h-5 w-5 min-w-[1.25rem] text-indigo-300 mt-1" />
-                <div className="flex flex-col text-indigo-100 hover:text-white transition-colors">
-                  <Link href="tel:+573116370334">+57 311 637 0334</Link>
-                  <span>+57 313 748 0706</span>
-                  <span>+57 311 771 5475</span>
-                  <span>+602 386 1649</span>
-                </div>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 min-w-[1.25rem] text-indigo-300 shrink-0" />
-                <Link
-                  href="mailto:clinicaveterinariahercules@gmail.com"
-                  className="text-indigo-100 hover:text-white transition-colors break-all"
-                >
-                  clinicaveterinariahercules@gmail.com
-                </Link>
-              </li>
+            <h3 className="text-lg font-semibold mb-4 text-white">Contacto</h3>
 
-              <li className="flex items-start gap-3">
-                <Clock className="h-5 w-5 min-w-[1.25rem] text-indigo-300 mt-0.5" />
-                <div className="text-indigo-100">
-                  <p>Lun-Sab: 8am-10pm</p>
-                  <p>Dom: 9am-6pm</p>
-                  <p>Urgencias 24 horas</p>
-                </div>
-              </li>
-            </ul>
+            {/* Sede Norte */}
+            <div className="mb-6">
+              <h4 className="text-base font-semibold text-indigo-200 mb-2">
+                Sede Brisas de los Alamos
+              </h4>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <MapPin className="h-5 w-5 text-indigo-300 mt-0.5" />
+                  <span className="text-indigo-100">
+                    Av. 2B Norte #73A-26, Cali
+                  </span>
+                </li>
+
+                <li className="flex items-start gap-3">
+                  <Phone className="h-5 w-5 text-indigo-300 mt-1" />
+                  <div className="flex flex-col text-indigo-100 hover:text-white transition-colors">
+                    <Link href="tel:+57311 637 0334">+57 311 637 0334</Link>
+                    <Link href="tel:+573137480706">+57 313 748 0706</Link>
+                    <Link href="tel:+573117715475">+57 311 771 5475</Link>
+                    <span>+602 386 1640</span>
+                  </div>
+                </li>
+
+                <li className="flex items-start gap-3">
+                  <Clock className="h-5 w-5 text-indigo-300 mt-0.5" />
+                  <span className="text-indigo-100">Atención 24 horas</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Sede Sur */}
+            <div className="mb-6">
+              <h4 className="text-base font-semibold text-indigo-200 mb-2">
+                Sede la Rivera
+              </h4>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <MapPin className="h-5 w-5 text-indigo-300 mt-0.5" />
+                  <span className="text-indigo-100">
+                    Cra 1D # 68A - 38, Cali
+                  </span>
+                </li>
+
+                <li className="flex items-start gap-3">
+                  <Phone className="h-5 w-5 text-indigo-300 mt-1" />
+                  <div className="flex flex-col text-indigo-100 hover:text-white transition-colors">
+                    <Link href="tel:+573242676234">+57 324 267 6234</Link>
+                    <Link href="tel:+573137480706">+57 313 748 0706</Link>
+                    <Link href="tel:+573117715475">+57 311 771 5475</Link>
+                  </div>
+                </li>
+
+                <li className="flex items-start gap-3">
+                  <Clock className="h-5 w-5 text-indigo-300 mt-0.5" />
+                  <span className="text-indigo-100">Atención 24 horas</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Correo compartido */}
+            <div className="flex items-center gap-3">
+              <Mail className="h-5 w-5 text-indigo-300 shrink-0" />
+              <Link
+                href="mailto:clinicaveterinariahercules@gmail.com"
+                className="text-indigo-100 hover:text-white transition-colors break-all"
+              >
+                clinicaveterinariahercules@gmail.com
+              </Link>
+            </div>
           </div>
         </div>
 
+        {/* FOOTER BOTTOM (fuera del grid) */}
         <div className="mt-12 pt-8 border-t border-indigo-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-indigo-100 text-sm">
-            © {new Date().getFullYear()} Clinica Veterinaria Hercules. Todos los
+            © {new Date().getFullYear()} Clínica Veterinaria Hércules. Todos los
             derechos reservados.
           </p>
 
           <div className="flex items-center gap-2">
             <Link
-              href="https://www.google.com/search?sca_esv=cd2e0a442ffc9e64&rlz=1C1VDKB_esCO1018CO1018&sxsrf=AHTn8zrX9cvhsX4IUEPecz-a52N9SAFLpA:1745965460277&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzdrL-pw0zeUYMH152WGI8kOwRSFCAvlLyyksIHEymx62cHa_QNTEtWOZWgKW8Br6HqICUvcdTqrwRCG-Z-zXbTmAhKyjEvMXzd-U_9b-32-e0y1o-1eXfKRwKwtS37nNj-sC-eI%3D&q=Cl%C3%ADnica+Veterinaria+H%C3%A9rcules+Opiniones&sa=X&ved=2ahUKEwid-rKYpP6MAxUZQzABHbjSE_0Q0bkNegQIIRAD&biw=1366&bih=599&dpr=1"
+              href="https://www.google.com/search?q=Cl%C3%ADnica+Veterinaria+H%C3%A9rcules+Opiniones"
               target="_blank"
               className="flex items-center gap-1 text-indigo-100 hover:text-white transition-colors"
             >
-              <Star
-                className="h-4 w-4 fill-yellow-400 min-w-[1.25rem] stroke-yellow-400"
-                strokeWidth="2"
-              />
+              <Star className="h-4 w-4 fill-yellow-400 stroke-yellow-400" />
               Déjanos una reseña en Google
             </Link>
           </div>
@@ -315,3 +252,4 @@ export default function Footer() {
     </footer>
   );
 }
+

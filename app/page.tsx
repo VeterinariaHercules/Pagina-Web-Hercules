@@ -6,8 +6,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { MapPin, Clock, Phone, Star } from "lucide-react"
 import ServiceCard from "@/components/service-card"
-import ContactSection from "@/components/contact-section"
 import { useState, useEffect } from "react";
+import Networks from "@/components/networks"
 import productosDestacados from "@/data/productos/productosDestacados/productosDestacados"
 
 
@@ -71,44 +71,105 @@ export default function Home() {
       {/* Quick Info Section */}
       <section className="py-8 px-8 bg-indigo-50 rounded-lg mb-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card className="border-none shadow-sm bg-white">
-            <CardContent className="flex items-center gap-4 p-6">
-              <div className="bg-indigo-100 p-3 rounded-full">
-                <Clock className="h-6 w-6 text-teal-600" />
+         <Card className="bg-white border-0 shadow-sm rounded-lg">
+          <CardContent className="p-6 space-y-5">
+            <div className="flex items-start gap-4">
+              <div className="bg-indigo-100 p-2.5 rounded-full">
+                <Clock className="w-5 h-5 text-indigo-600" />
               </div>
-              <div>
-                <h3 className="font-medium text-gray-900">Horario de atención</h3>
-                <p className="text-gray-600">Lun-Sab: 8am-10pm | Dom: 9am-6pm Urgencias 24 horas</p>
+              <div className="space-y-2">
+                <h3 className="text-xl font-semibold text-indigo-900">
+                  Horario de Atención
+                </h3>
+                <p className="text-gray-600">
+                  Atención veterinaria sin interrupciones, todo el año.
+                </p>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+            <div className="flex justify-center">
+              <div className="bg-rose-500 text-white text-lg font-extrabold px-8 py-4 rounded-2xl shadow-2xl animate-pulse w-full text-center max-w-xs">
+                🕒 24 horas - Todos los días
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
-          <Card className="border-none shadow-sm bg-white">
-            <CardContent className="flex items-center gap-4 p-6">
-              <div className="bg-indigo-100 p-3 rounded-full">
-                <Phone className="h-6 w-6 text-teal-600" />
-              </div>
-              <div>
-                <h3 className="font-medium text-gray-900">Contacto</h3>
-                <p className="text-gray-600">+57 311 637 0334<br />
-                  +57 313 748 0706 <br />
-                  +57 311 771 5475 <br />
-                  +602 386 1640 </p>
-              </div>
-            </CardContent>
-          </Card>
+       <Card className="bg-white border-0 shadow-sm">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-indigo-900 mb-4">Sede Brisas de los Álamos</h3>
 
-          <Card className="border-none shadow-sm bg-white">
-            <CardContent className="flex items-center gap-4 p-6">
-              <div className="bg-indigo-100 p-3 rounded-full">
-                <MapPin className="h-6 w-6 text-teal-600" />
-              </div>
-              <div>
-                <h3 className="font-medium text-gray-900">Ubicación</h3>
-                <p className="text-gray-600">Av. 2b norte # 73a -26, Cali<br /> Brisas de los Alamos</p>
-              </div>
-            </CardContent>
-          </Card>
+                {/* Location */}
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="bg-indigo-100 p-2 rounded-full mt-1">
+                    <MapPin className="w-5 h-5 text-indigo-600" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-900">Ubicación</p>
+                    <p className="text-gray-700">Av. 2b norte # 73a -26, Cali</p>
+                    <p className="text-gray-700">Brisas de los Álamos</p>
+                  </div>
+                </div>
+
+                {/* Contact */}
+                <div className="flex items-start gap-3">
+                  <div className="bg-indigo-100 p-2 rounded-full mt-1">
+                    <Phone className="w-5 h-5 text-indigo-600" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-900 mb-1">Contacto</p>
+                    <a href="tel:+573116370334" className="block text-indigo-600 hover:text-indigo-700">
+                      +57 311 637 0334
+                    </a>
+                    <a href="tel:+573137480706" className="block text-indigo-600 hover:text-indigo-700">
+                      +57 313 748 0706
+                    </a>
+                    <a href="tel:+573117715475" className="block text-indigo-600 hover:text-indigo-700">
+                      +57 311 771 5475
+                    </a>
+                    <a href="tel:+6023861640" className="block text-indigo-600 hover:text-indigo-700">
+                      +602 386 1640
+                    </a>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+          <Card className="bg-white border-0 shadow-sm">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-indigo-900 mb-4">Sede la Rivera</h3>
+
+                {/* Location */}
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="bg-indigo-100 p-2 rounded-full mt-1">
+                    <MapPin className="w-5 h-5 text-indigo-600" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-900">Ubicación</p>
+                    <p className="text-gray-700">Cra 1D # 68A - 38, Cali</p>
+                    <p className="text-gray-700">La Rivera</p>
+                  </div>
+                </div>
+
+                {/* Contact */}
+                <div className="flex items-start gap-3">
+                  <div className="bg-indigo-100 p-2 rounded-full mt-1">
+                    <Phone className="w-5 h-5 text-indigo-600" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-900 mb-1">Contacto</p>
+                    <a href="tel:+573117715475" className="block text-indigo-600 hover:text-indigo-700">
+                      +57 324 267 6234
+                    </a>
+                     <a href="tel:+573137480706" className="block text-indigo-600 hover:text-indigo-700">
+                      +57 313 748 0706
+                    </a>
+                    <a href="tel:+573137480706" className="block text-indigo-600 hover:text-indigo-700">
+                      +57 311 771 5475
+                    </a>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
         </div>
       </section>
 
@@ -257,77 +318,105 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Products */}
-      <section className="py-12">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-indigo-800 mb-4">Productos Destacados</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Descubre nuestra selección de productos de alta calidad para el cuidado de tu mascota.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {productosDestacados.map((product) => (
-            <Link href={`/tienda/${product.id}`} key={product.id}>
-              <Card className="h-full transition-all hover:shadow-md">
-                <div className="relative h-40 w-full">
-                  <Image
-                    src={product.image || "/placeholder.svg"}
-                    alt={product.name}
-                    fill
-                    className="object-cover rounded-t-lg"
-                  />
-                </div>
-                <CardContent className="p-3">
-                  <h3 className="font-medium text-gray-900 text-sm">{product.name}</h3>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
-        </div>
-
-        <div className="text-center mt-8">
-          <Button asChild className="bg-indigo-600 hover:bg-indigo-700">
-            <Link href="/tienda">Ver todos los productos</Link>
-          </Button>
-        </div>
-      </section>
-
       {/* Map Section */}
       <section className="py-12">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-indigo-800 mb-4">Nuestra Ubicación</h2>
+          <h2 className="text-3xl font-bold text-indigo-800 mb-4">Nuestras Sedes</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Estamos ubicados en una zona céntrica y de fácil acceso. ¡Ven a visitarnos!
+            Contamos con dos sedes para ofrecerte atención veterinaria 24 horas en Cali.
           </p>
         </div>
 
-        <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.754180833525!2d-76.5062012!3d3.492575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a997aa17475f%3A0xd88bb2d00e4d12be!2sCl%C3%ADnica%20Veterinaria%20H%C3%A9rcules!5e0!3m2!1ses-419!2sco!4v1689638940143!5m2!1ses-419!2sco"
-            width="100%"
-            height="100%"
-            loading="lazy"
-            allowFullScreen
-            style={{ border: 0 }}
-            className="absolute top-0 left-0 w-full h-full"
-          ></iframe>
-          <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-            <Link
-              href="https://www.google.com/maps/place/Cl%C3%ADnica+Veterinaria+H%C3%A9rcules/@3.492575,-76.5062012,17z/data=!3m1!4b1!4m6!3m5!1s0x8e30a997aa17475f:0xd88bb2d00e4d12be!8m2!3d3.4925696!4d-76.5036263!16s%2Fg%2F11k51ggr95?entry=ttu&g_ep=EgoyMDI1MDQyNy4xIKXMDSoASAFQAw%3D%3D"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button className="bg-indigo-600 text-white px-6 py-3 rounded-lg shadow hover:bg-indigo-700 transition">
-                Abrir en Google Maps
-              </button>
-            </Link>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          {/* 🏥 Sede Principal */}
+          <div className="relative h-[400px] w-full rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7539059465223!2d-76.50594952473353!3d3.492636751348806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a997aa17475f%3A0xd88bb2d00e4d12be!2sCl%C3%ADnica%20Veterinaria%20H%C3%A9rcules!5e0!3m2!1ses!2sco!4v1728240123456!5m2!1ses!2sco"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              className="absolute top-0 left-0 w-full h-full"
+            ></iframe>
+            <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+              <a
+                href="https://www.google.com/maps/place/Cl%C3%ADnica+Veterinaria+H%C3%A9rcules/@3.4926367,-76.5059495,17z/data=!3m1!4b1!4m6!3m5!1s0x8e30a997aa17475f:0xd88bb2d00e4d12be!8m2!3d3.4926367!4d-76.5033746!16s%2Fg%2F11k51ggr95"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="bg-indigo-600 text-white px-6 py-3 rounded-lg shadow hover:bg-indigo-700 transition">
+                  Abrir en Google Maps
+                </button>
+              </a>
+            </div>
+          </div>
+
+          {/* 🏥 Sede Secundaria*/}
+          <div className="relative h-[400px] w-full rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.871643054621!2d-76.5213556250106!3d3.476639951382246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a0dbf6c0d03d%3A0xd7a3e8eb3f99a53d!2sCra.%201D%20%23%2068a-38%2C%20Cali%2C%20Valle%20del%20Cauca!5e0!3m2!1ses!2sco!4v1728258800000!5m2!1ses!2sco"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              className="absolute top-0 left-0 w-full h-full"
+            ></iframe>
+            <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+              <a
+                href="https://www.google.com/maps/place/Cra.+1D+%23+68a-38,+Cali,+Valle+del+Cauca/@3.47664,-76.5213556,17z/data=!3m1!4b1!4m6!3m5!1s0x8e30a0dbf6c0d03d:0xd7a3e8eb3f99a53d!8m2!3d3.47664!4d-76.5187807!16s%2Fg%2F11c2yz8d_4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="bg-indigo-600 text-white px-6 py-3 rounded-lg shadow hover:bg-indigo-700 transition">
+                  Abrir en Google Maps
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <ContactSection />
+      {/* Featured Products */}
+      <section className="py-12 bg-indigo-50 rounded-none my-12 shadow-sm">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-10 px-4">
+            <h2 className="text-3xl font-bold text-indigo-800 mb-3">Productos Destacados</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Descubre nuestra selección de productos de alta calidad para el cuidado de tu mascota.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-6">
+            {productosDestacados.map((product) => (
+              <Link href={`/tienda/${product.id}`} key={product.id}>
+                <Card className="h-full transition-all hover:shadow-lg hover:-translate-y-1 bg-white rounded-xl overflow-hidden">
+                  <div className="relative h-56 w-full"> {/* 🔹 Imagen más alta */}
+                    <Image
+                      src={product.image || "/placeholder.svg"}
+                      alt={product.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <CardContent className="p-4 text-center">
+                    <h3 className="font-medium text-gray-900 text-base">{product.name}</h3>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Button asChild className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg shadow">
+              <Link href="/tienda">Ver todos los productos</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Redes*/}
+      <Networks/>
     </div>
   )
 }
