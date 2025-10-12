@@ -20,7 +20,7 @@ export default function WhatsAppButton() {
       {open && (
         <div className="bg-green-100 border border-green-300 text-gray-800 shadow-2xl rounded-2xl p-4 mb-2 w-56 animate-in fade-in zoom-in duration-200">
           <p className="text-gray-800 font-semibold text-sm mb-3 text-center flex items-center justify-center gap-2">
-            ¿Con qué sede te quieres contactar?
+            ¿Con qué sede deseas ponerte en contacto?
           </p>
           <div className="flex flex-col gap-2">
             {sedes.map((sede) => (
