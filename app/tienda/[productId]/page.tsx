@@ -3,13 +3,16 @@ import { Card, CardContent } from "@/components/ui/card"
 import { ChevronRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import ContactSection from "@/components/contact-section"
+import WhatsappContact from "@/components/whatsapp-contact"
 import alimentos from "@/data/productos/alimentos/alimentos"
 import accesorios from "@/data/productos/accesorios/accesorios"
 import juguetes from "@/data/productos/juguetes/juguetes"
 import medicamentos from "@/data/productos/medicamentos/medicamentos"
 import arenas from "@/data/productos/arenas/arenas"
 import ShareButton from "@/components/share-button"
+import { FaWhatsapp } from "react-icons/fa"; 
+
+
 
 interface ProductPageProps {
   params: {
@@ -136,45 +139,30 @@ export default function ProductPage({ params }: ProductPageProps) {
           />
         </div>
 
-        {/* Product Info */}
-        <div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">{producto?.name}</h1>
-          <p className="text-gray-600 mb-6">{producto?.description}</p>
+   
+      {/* Product Info */}
+      <div>
+        <h1 className="text-3xl font-bold text-gray-900 mb-4">{producto?.name}</h1>
+        <p className="text-gray-600 mb-6">{producto?.description}</p>
+        <div className="flex flex-wrap items-center gap-4 mb-6">
+        </div>
 
-          <div className="flex items-center gap-4 mb-6">
-            <Button asChild size="lg" className="bg-indigo-600 hover:bg-indigo-700">
-              <Link
-                href={`https://wa.me/573116370334?text=Me%20interesa%20el%20producto%20${encodeURIComponent(producto?.name)}`}
-                target="_blank"
+
+        <div className="bg-indigo-50 p-4 rounded-lg mb-6">
+          <h3 className="font-medium text-indigo-800 mb-2">Preguntas frecuentes</h3>
+          <div className="grid gap-2">
+            {faqs.map((question, index) => (
+              <div
+                key={index}
+                className="justify-start text-left h-auto py-2 hover:bg-indigo-100 hover:text-indigo-700"
               >
-                Consultar por WhatsApp
-              </Link>
-            </Button>
-            <ShareButton productName={producto.name} />
-          </div>
-
-          <div className="bg-indigo-50 p-4 rounded-lg mb-6">
-            <h3 className="font-medium text-indigo-800 mb-2">Preguntas frecuentes</h3>
-            <div className="grid gap-2">
-              {faqs.map((question, index) => (
-                <Button
-                  asChild
-                  variant="ghost"
-                  className="justify-start text-left h-auto py-2 hover:bg-indigo-100 hover:text-indigo-700"
-                  key={index}
-                >
-                  <Link
-                    href={`https://wa.me/573116370334?text=${encodeURIComponent(`Hola, el producto: ${producto?.name || ''}. ${question}`)}`}
-                    target="_blank"
-                  >
-                    {question}
-                  </Link>
-                </Button>
-              ))}
-            </div>
+                {question}
+              </div>
+            ))}
           </div>
         </div>
       </div>
+    </div>
 
       {/* Related Products */}
       <section className="mb-16">
@@ -192,7 +180,7 @@ export default function ProductPage({ params }: ProductPageProps) {
                   />
                 </div>
                 <CardContent className="p-3">
-                  <h3 className="font-medium text-gray-900 text-sm">{product.name}</h3>
+                  <h3 className="font-medium text-gray-900 text-sm text-center">{product.name}</h3>
                 </CardContent>
               </Card>
             </Link>
@@ -201,7 +189,7 @@ export default function ProductPage({ params }: ProductPageProps) {
       </section>
 
       {/* Contact Section */}
-      <ContactSection />
+      <WhatsappContact />
     </div>
   )
 }

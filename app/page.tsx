@@ -96,7 +96,7 @@ export default function Home() {
 
        <Card className="bg-white border-0 shadow-sm">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-indigo-900 mb-4">Sede Brisas de los Álamos</h3>
+                <h3 className="text-xl font-semibold text-indigo-900 mb-4">Sede 1 - Brisas de los Álamos</h3>
 
                 {/* Location */}
                 <div className="flex items-start gap-3 mb-4">
@@ -136,7 +136,7 @@ export default function Home() {
 
           <Card className="bg-white border-0 shadow-sm">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-indigo-900 mb-4">Sede la Rivera</h3>
+                <h3 className="text-xl font-semibold text-indigo-900 mb-4">Sede 2 - la Rivera</h3>
 
                 {/* Location */}
                 <div className="flex items-start gap-3 mb-4">
